@@ -1,18 +1,18 @@
 const express=require('express');
 const app = express()
-require("dotenv").config();
-const mongoose = require('mongoose');
+// require("dotenv").config();
+// const mongoose = require('mongoose');
 const cors = require('cors');
 // mongoose.connect('mongodb://localhost:27017/test');
 // const { auth } = require('express-openid-connect');
 app.use(express.json())
 
-mongoose.connect('mongodb://localhost:27017/test', {useNewUrlParser:true})
-const con = mongoose.connection
+// mongoose.connect('mongodb://localhost:27017/test', {useNewUrlParser:true})
+// const con = mongoose.connection
 
-con.on('open', () => {
-    console.log('connected...')
-})
+// con.on('open', () => {
+//     console.log('connected...')
+// })
 
 app.use(cors())
 // app.use(
@@ -25,8 +25,8 @@ app.use(cors())
 //     })
 //   );
 
-const bookroutes=require('./routes/bookRoute')
-const searchRoute=require('./routes/searchs')
+// const bookroutes=require('./routes/bookRoute')
+// const searchRoute=require('./routes/searchs')
 app.get('/',(req,res)=>{
     res.send('Hello world');
 })
@@ -34,8 +34,8 @@ app.get('/',(req,res)=>{
 app.get('/save',(req,res)=>{
     res.send('save from my api');
 })
-app.use('/api',bookroutes)
-app.use('/search',searchRoute)
+// app.use('/api',bookroutes)
+// app.use('/search',searchRoute)
 
 app.listen(process.env.PORT || 4000,()=>{
     console.log('server is running hurreh')
