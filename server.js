@@ -7,7 +7,7 @@ const cors = require('cors');
 // const { auth } = require('express-openid-connect');
 app.use(express.json())
 
-mongoose.connect(process.env.DB_URL, {useNewUrlParser:true})
+mongoose.connect('mongodb://localhost:27017/test', {useNewUrlParser:true})
 const con = mongoose.connection
 
 con.on('open', () => {
