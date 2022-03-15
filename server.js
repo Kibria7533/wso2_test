@@ -30,6 +30,10 @@ const searchRoute=require('./routes/searchs')
 app.get('/',(req,res)=>{
     res.send('Hello world');
 })
+
+app.get('/save',(req,res)=>{
+    res.send('save from my api');
+})
 app.use('/api',bookroutes)
 app.use('/search',searchRoute)
 
